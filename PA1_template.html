@@ -191,7 +191,7 @@ typical.weekday &lt;- data.frame(
                  data.imp[data.imp$daytype == &quot;Weekday&quot;, ]$interval, mean, na.rm=TRUE),
   interval = unique(data.imp[data.imp$daytype == &quot;Weekday&quot;, ]$interval)
 )</code></pre>
-<p>The weekend and weekday activity patterns can be compared in the following plots, created in a similar way to the the previous activity pattern plot, but faceted by combining two plots together. This effect is achieved in base R by setting <code>par(mfcol=c(2,1))</code>.</p>
+<p>The weekend and weekday activity patterns can be compared in the following panel plot, created in a similar way to the the previous activity pattern plot, but faceted by combining two plots together. This effect is achieved in base R by setting <code>par(mfcol=c(2,1))</code>.</p>
 <pre class="r"><code>par(mfrow=c(2,1))
 
 max.interval &lt;- which.max(typical.weekend$steps)

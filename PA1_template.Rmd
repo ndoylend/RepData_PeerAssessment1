@@ -180,7 +180,7 @@ typical.weekday <- data.frame(
 )
 ```
 
-The weekend and weekday activity patterns can be compared in the following plots, created in a similar way to the the previous activity pattern plot, but faceted by combining two plots together. This effect is achieved in base R by setting `par(mfcol=c(2,1))`.
+The weekend and weekday activity patterns can be compared in the following panel plot, created in a similar way to the the previous activity pattern plot, but faceted by combining two plots together. This effect is achieved in base R by setting `par(mfcol=c(2,1))`.
 ```{r, fig.height=8, echo=TRUE}
 par(mfrow=c(2,1))
 
