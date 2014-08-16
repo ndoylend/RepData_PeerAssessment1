@@ -1,6 +1,8 @@
 # Reproducible Research: Peer Assignment 1
 ND  
-14/08/2014  
+16/08/2014  
+
+This submission consists of a brief example of reproducible research using data from a personal activity monitoring device. The data consists of two months of step data from an anonymous individual collected during October and November 2012 and include the number of steps taken in 5 minute intervals each day.
 
 ## Loading and pre-processing the data
 
@@ -65,7 +67,7 @@ hist(daily$steps, xlab = "Steps per day", main = "Total steps per day",
 
 ![plot of chunk unnamed-chunk-6](./PA1_template_files/figure-html/unnamed-chunk-6.png) 
 
-The following plot of steps per day by date provides a further way of looking at the variability in the data.
+The following time series plot of steps per day by date provides a further way of looking at the variability in the data.
 
 ```r
 plot(y = daily$steps, x = daily$date, type = "l", main = "Total steps per day",
@@ -95,7 +97,7 @@ It is possible to identify the interval that, on average, contains the maximum n
 max.interval <- which.max(typical$steps)
 ```
 
-This **maximum number of steps per interval occurs at 08:35**, as shown on the following annotated plot.
+This **maximum number of steps per interval occurs at 08:35**, as shown on the following annotated time series plot.
 
 ```r
  # plot the daily profile without an x-axis:
@@ -163,7 +165,7 @@ daily.imp.mean <- mean(daily.imp$steps, na.rm = TRUE)
 daily.imp.median <- median(daily.imp$steps, na.rm = TRUE)
 ```
 
-From the imputed dataset, the **mean number of steps per day is 10766** and the **median number of steps per day is 10766** These are virtually the same as the original dataset however the distribution may have changed. The following histograms illustrates the difference in distribution between the two datasets. The histograms are plotted side by side by setting `par(mfrow=c(1,2))`.
+From the imputed dataset, the **mean number of steps per day is 10766** and the **median number of steps per day is 10766** These are virtually the same as the original dataset however the distribution may have changed. The following histograms illustrate the difference in distribution between the two datasets. The histograms are plotted side by side by setting `par(mfrow=c(1,2))`.
 
 ```r
 par(mfrow=c(1,2))
@@ -247,4 +249,4 @@ max.interval <- which.max(typical.weekday$steps)
 
 ![plot of chunk unnamed-chunk-18](./PA1_template_files/figure-html/unnamed-chunk-18.png) 
 
-There is a more pronounced peak in the weekday activity pattern, occurring between 8:30 and 8:35. After this morning peak there appears to be fewer steps per interval than on the weekend activity.
+There is a more pronounced peak in the weekday activity pattern, occurring between 8:30 and 8:35. After this morning peak there appears to be fewer steps per interval than on the weekend activity profile. It is difficult to make much inference from these average profiles however the weekday morning peak might correspond to a running or walking commute, with less subsequent activity during working hours than on weekends. Further investigation could consider the variance in daily totals as well as in steps at each interval in the activity profiles.
